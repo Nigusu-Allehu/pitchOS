@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nigusu/compilers/pitchOS/pitchOS'
+nasm -f bin ./src/boot/boot.asm -o ./bin/boot.bin
+nasm -f elf -g ./src/kernel.asm -o ./build/kernel.asm.o
+i686-elf-ld -g -relocatable ./build/kernel.asm.o -o ./build/kernelfull.o
+i686-elf-gcc -T ./src/linker.ld -o ./bin/kernel.bin -ffreestanding -O0 -nostdlib ./build/kernelfull.o
+rm -rf ./bin/os.bin
+dd if=./bin/boot.bin >> ./bin/os.bin
+dd if=./bin/kernel.bin >> ./bin/os.bin
+dd if=/dev/zero bs=512 count=100 >> ./bin/os.bin
+make: Leaving directory '/home/nigusu/compilers/pitchOS/pitchOS'
+ 

@@ -1,0 +1,1 @@
+{"buildTargets":["all","bin/boot.bin","bin/kernel.bin","build/kernel.asm.o","clean","emu"],"launchTargets":["/home/nigusu/compilers/pitchOS/pitchOS/bin>kernel.bin()","/home/nigusu/compilers/pitchOS/pitchOS/build>kernelfull.o()"],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
